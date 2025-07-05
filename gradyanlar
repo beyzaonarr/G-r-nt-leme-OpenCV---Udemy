@@ -33,5 +33,7 @@ Bu kod, dikey kenarları tespit etmek için 5x5 Sobel çekirdeğiyle img üzerin
 """
 
 # Laplacian gradyan
-laplacian = cv2.Laplacian(img, ddepth = cv2.CV_16S) #Laplacian hem dikey hem yatay belirgin
+laplacian = cv2.Laplacian(img, ddepth = cv2.CV_16S) #Laplacian hem dikey hem yatay belirgin, Hem X hem Y yönlerinde türev alır. Yani dikey ve yatay kenarları birlikte tespit eder. Laplacian operatörü, görüntünün ikinci türevini alır.
+
+
 plt.figure(), plt.imshow(laplacian, cmap = "gray"), plt.axis("off"), plt.title("Laplacian ")
