@@ -4,9 +4,9 @@ import cv2
 import matplotlib.pyplot as plt
 
 img1 = cv2.imread("img1.jpg")
-img1 = cv2.cvtColor(img1, cv2.COLOR_BGR2GRB)
+img1 = cv2.cvtColor(img1, cv2.COLOR_BGR2RGB)
 img2 = cv2.imread("img2.jpg")
-img2 = cv2.cvtColor(img2, cv2.COLOR_BGR2GRB)
+img2 = cv2.cvtColor(img2, cv2.COLOR_BGR2RGB)
 
 plt.figure()
 plt.imshow(img1)
