@@ -1,0 +1,30 @@
+#ŞEKİLLER VE METİN
+
+import cv2
+import numpy as np
+
+#resim oluştur
+img = np.zeros((512,512,3), np.uint8) #siyah bir resim oluşacak çünkü derinliği 0, zerostan dolayı. uint8: "Unsigned Integer 8-bit" demek, yani 0 ile 255 arasındaki tam sayı değerlerini alabilir.
+print(img.shape)                       #Unsigned (işaretsiz) olduğu için negatif sayılar içermez.8-bit olduğu için (2^8 = 256), yani 0 ile 255 arasında bir değer alabilir.
+                                       # 3 renk kanallarını temsil ediyor RGB->BGR. Eğer (512,512) olsaydı siyah beyaz olurdu resim. Siyah beyaz görüntüler tek kanal = grayscale
+cv2.imshow("Siyah", img)
+
+#çizgi
+# (resim,başlangıç noktası, bitiş noktası, renk, kalınlık)
+cv2.line(img, (100,100), (100,300), (0,255,0), 3) #BGR = (0,255,0) blue,green,red
+cv2.imshow("line", img)
+
+#dikdörtgen
+# (resim, başlangıç, bitiş, renk, içini boyamak)
+cv2.rectangle(img,(0,0),(256,256),(255,0,0), cv2.FILLED)
+cv2.imshow("Rectangle", img)
+
+#çember
+# (resim,merkez,yarıçap, renk)
+cv2.circle(img, (300,300), 45, (0,0,255), cv2.FILLED)
+cv2.imshow("Circle", img)
+
+#metin
+#(resim,metin, başlangıç noktası,font, kalınlık, renk)
+cv2.putText(img,"Harry Potter",(350,350), cv2.FONT_HERSHEY_COMPLEX,1,(255,255,255))
+cv2.imshow("Text", img)
