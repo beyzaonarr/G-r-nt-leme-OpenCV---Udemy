@@ -1,0 +1,32 @@
+#os kütüphanesi
+
+import os
+
+print(os.name) #windows kullandığımız için output nt oldu
+
+currentDir = os.getcwd() #O an çalıştığın dizinin pathini(yol) verir.
+print(currentDir)
+
+#new folder
+folder_name = "new_folder"
+os.mkdir(folder_name) #mkdir (make directory), belirttiğin isimde yeni bir klasör oluşturur.Çalıştırdığın dizinde (os.getcwd()) bu klasör oluşur.
+
+new_folder_name = "new_folder_2"
+os.rename(folder_name, new_folder_name)
+
+os.chdir(currentDir + "//" + new_folder_name)
+print(os.getcwd)
+
+os.chdir(currentDir) # chdir O an çalıştığın dizini (klasörü) değiştirir. os.getcwd() ile değişiklik olup olmadığını kontrol edebilirsin.
+print(os.getcwd)
+
+# Yeni çalışma dizinini belirle
+new_directory = "C:\\Users\\Beyza\\Desktop\\YeniKlasör"
+
+# Çalışma dizinini değiştir
+os.chdir(new_directory)
+
+# Yeni çalışma dizinini kontrol et
+print("Yeni çalışma dizini:", os.getcwd())
+
+files = os.listdir()   # o an çalıştığın yerdeki dosyalar listelenir (herhangi bir path belirtmediysem)
